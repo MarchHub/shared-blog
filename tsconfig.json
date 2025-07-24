@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["vite/client"]     // 引入 Vite 内置的类型声明
+  },
+  "include": [
+    "env.d.ts",    // 新增这一行
+    "src",
+    "docs",
+    ".vitepress"
+  ]
+}

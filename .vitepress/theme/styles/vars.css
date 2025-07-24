@@ -1,0 +1,12 @@
+:root {
+  --vp-color-primary: #3178c6;
+  --vp-font-main: 'PingFang SC', sans-serif;
+}
+
+.VPFeatures .items .item {
+  transition: transform 0.3s;
+}
+
+.VPFeatures .items .item:hover {
+  transform: translateY(-5px);
+}
