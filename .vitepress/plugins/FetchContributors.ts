@@ -4,6 +4,9 @@ import { relative, sep } from 'path'
 import matter from 'gray-matter'
 
 import contributors_config from '../env-config'
+import dotenv from 'dotenv';
+dotenv.config();
+
 /**
  * VitePress 插件：为每个 .md 文件注入 contributors frontmatter
  */
@@ -11,7 +14,7 @@ export default function githubContributors(): Plugin {
   // const { owner, repo, apiBase = 'https://api.github.com' } =
   const { owner, repo } = contributors_config
   const apiBase = 'https://api.github.com'
-
+  console.log(process.env.GITHUB_TOKEN)
   return {
     name: 'vitepress-github-contributors',
     enforce: 'pre',
