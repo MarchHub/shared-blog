@@ -7,45 +7,40 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. 拉取代码
-      - name: Checkout code
+      # 1. 拉取代码（保留历史记录）
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      # 2. 缓存依赖
-      - name: Cache node_modules
+      # 2. 安装 pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      # 3. 缓存 pnpm store，加速依赖安装
+      - name: Cache pnpm store
         uses: actions/cache@v3
         with:
-          path: |
-            ~/.npm
-            node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-node-
+            ${{ runner.os }}-pnpm-
 
-      # 3. 安装依赖
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: npm
-
+      # 4. 安装依赖
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
-      # 4. 预生成 features
-      - name: Generate homepage features
-        run: npm run prebuild
-
-      # 5. 构建 VitePress
+      # 5. 构建 VitePress 站点
       - name: Build VitePress site
-        run: npm run build
+        run: pnpm run build
 
       # 6. 部署到 gh-pages 分支
       - name: Deploy to GitHub Pages
@@ -53,6 +48,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .vitepress/dist
-          publish_branch: gh-pages   # 可选：指定其他分支
-          user_name: GitHub Actions
+          publish_branch: gh-pages
+          user_name: github-actions
           user_email: actions@github.com
