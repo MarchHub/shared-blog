@@ -22,7 +22,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.MY_SECRET_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.CONTRIBUTOR_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
