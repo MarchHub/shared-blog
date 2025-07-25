@@ -8,6 +8,7 @@ import footnote from 'markdown-it-footnote'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 
 export default defineConfig({
+  base: '/vitepress-blog/',
   title: "Machillka's Blog",
   description: "Record learning journey",
   head: [
