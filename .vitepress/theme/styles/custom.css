@@ -1,6 +1,0 @@
-body {
-  font-family: var(--vp-font-main);
-}
-.vp-nav__link.active {
-  color: var(--vp-color-primary);
-}

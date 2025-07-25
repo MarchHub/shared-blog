@@ -25,3 +25,19 @@ let x: i32 = 14
 :::info
 container
 :::
+
+==尝试使用高亮==
+
+尝试使用脚注[^1]
+
+```c
+// 代码块尝试
+int a = 1;
+printf("%d", a);
+for (int i = 0; i < 10; i++)
+{
+    printf("Hello world!");
+}
+```
+
+[^1]: https://bilibili.com
