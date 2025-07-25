@@ -7,12 +7,14 @@ import mark from 'markdown-it-mark'
 import footnote from 'markdown-it-footnote'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 
+const base = '/vitepress-blog/'
+
 export default defineConfig({
-  base: '/vitepress-blog/',
+  base: base,
   title: "Machillka's Blog",
   description: "Record learning journey",
   head: [
-    ['link', { rel: 'icon', href: '/icon.png' }],
+    ['link', { rel: 'icon', href: base + 'favicon.ico' }],
   ],
   cleanUrls: true,
   markdown: {
