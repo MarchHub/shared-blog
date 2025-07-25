@@ -8,6 +8,9 @@
 .temp
 .vite_opt_cache
 .vscode
+.vitepress/cache
+.vitepress/dist
+.vitepress/.temp
 dist
 cache
 temp
