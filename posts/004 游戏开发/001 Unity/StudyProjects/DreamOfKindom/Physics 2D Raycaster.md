@@ -1,1 +1,0 @@
-允许将指定图层里的gameobject当作UI使用

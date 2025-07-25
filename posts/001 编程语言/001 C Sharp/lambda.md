@@ -12,3 +12,5 @@ var Square = (x) => x * x;
 ```
 
 支持弃元
+
+![TEST](./../../attachments/pln.jpg)

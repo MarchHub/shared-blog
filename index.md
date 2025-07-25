@@ -6,7 +6,7 @@ hero:
   text: 学习记录
   tagline: 与你的相遇就是奇迹
   image:
-    src: kanban.png
+    src: /kanban.png
     # alt: VitePress
   actions:
     - theme: brand
