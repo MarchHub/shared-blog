@@ -40,4 +40,8 @@ for (int i = 0; i < 10; i++)
 }
 ```
 
+$(\sqrt{x})^2 = x$
+
+$$(\sqrt{x})^2 = x$$
+
 [^1]: https://bilibili.com

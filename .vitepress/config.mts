@@ -8,10 +8,12 @@ import footnote from 'markdown-it-footnote'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 
 export default defineConfig({
-
   title: "Machillka's Blog",
   description: "Record learning journey",
-
+  head: [
+    ['link', { rel: 'icon', href: '/icon.png' }],
+  ],
+  cleanUrls: true,
   markdown: {
     math: true,
     config: (md) => {
@@ -44,9 +46,7 @@ export default defineConfig({
         items: ScanCurrentDir('../../posts/', 'posts')
       }
     ],
-    // 侧边栏自定义
     sidebar: sidebar,
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/machillka' },
       { icon: '', link: ''}

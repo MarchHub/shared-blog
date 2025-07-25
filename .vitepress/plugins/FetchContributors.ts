@@ -63,7 +63,7 @@ export default function githubContributors(): Plugin {
         ...addedData
       }
 
-      console.log(mergedData)
+      // console.log(mergedData)
 
       const result = matter.stringify(content, mergedData)
 
