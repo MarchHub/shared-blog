@@ -1,9 +1,5 @@
----
-title: Rust Ownership
-description: rust 所有权的理解
-cover: /images/components/alert-cover.png
----
 在 Rust 中，所有权（ownership）属于每一个“值”（value），也就是用 `let`、函数参数或结构体字段创建的任何变量或数据结构。无论是基本数值类型（如 `i32`、`bool`）、堆分配的集合类型（如 `String`、`Vec<T>`）、用户自定义的 `struct` 和 `enum`，还是智能指针类型（如 `Box<T>`、`Rc<T>`、`Arc<T>`），它们都各自“拥有”自己的数据，并在超出作用域时负责释放这些数据。
+
 # 堆和栈
 
 ## 堆

@@ -5,16 +5,16 @@ hero:
   name: Machillka's Blog
   text: 学习记录
   tagline: 与你的相遇就是奇迹
-  # image:
-  #   src: /public/icon.png
-  #   alt: VitePress
+  image:
+    src: kanban.png
+    # alt: VitePress
   actions:
     - theme: brand
       text: Get Started
       link: /posts/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/Machillka/blog-vitepress
+      link: https://github.com/Machillka/vitepress-blog
 features:
   - title: 专栏
     details:
@@ -38,7 +38,3 @@ features:
     link: /posts/
 footer: © 2025 Machillka
 ---
-
-# 技术笔记
-
-进行一番记录

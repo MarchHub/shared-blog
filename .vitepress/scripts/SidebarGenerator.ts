@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-
+import { folderNames } from '../ignore'
 interface SidebarItem {
   text: string
   link?: string
@@ -13,6 +13,7 @@ interface SidebarItem {
  * @param rountPath 文件前缀
  * @returns 返回传入的 dir 生成的 sidebar
  */
+console.log(folderNames)
 function ScanDir(dir: string, routePath = '', depth = 1): SidebarItem[] {
     const entries = fs
     .readdirSync(dir)
@@ -23,6 +24,11 @@ function ScanDir(dir: string, routePath = '', depth = 1): SidebarItem[] {
     for (const name of entries) {
         const fullPath = path.join(dir, name)
         const stat = fs.statSync(fullPath)
+        if (folderNames.includes(name))
+        {
+            console.log(name)
+            continue
+        }
 
         // directory -> gen title item
         if (stat.isDirectory())

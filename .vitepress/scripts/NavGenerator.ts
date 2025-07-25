@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-
+import { folderNames } from '../ignore'
 interface navItem {
     text: string
     link: string
@@ -20,6 +20,8 @@ export  function ScanCurrentDir(dir: string, routePath = ''): navItem[] {
 
     const items: navItem[] = []
     for (const name of entries) {
+        // if (folderNames.includes(name))
+        //     continue
         const fullPath = path.join(dir, name)
         const stat = fs.statSync(fullPath)
 
