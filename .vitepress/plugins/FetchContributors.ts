@@ -71,8 +71,6 @@ export default function githubContributors(): Plugin {
       const result = matter.stringify(content, mergedData)
 
       return { code: result, map: null}
-      // const fm = `---\ncontributors: ${JSON.stringify(contributors)}\n---\n`
-      // return { code: fm + code, map: null }
     }
   }
 }
