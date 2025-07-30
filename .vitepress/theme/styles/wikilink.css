@@ -1,0 +1,10 @@
+a.wikilink {
+  color: var(--vp-c-brand);
+  text-decoration: underline dashed;
+}
+
+a.wikilink.new {
+  color: #999;
+  text-decoration-color: #999;
+  cursor: help;
+}

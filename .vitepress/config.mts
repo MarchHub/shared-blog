@@ -6,8 +6,8 @@ import markdownItTaskCheckbox from 'markdown-it-task-checkbox'
 import mark from 'markdown-it-mark'
 import footnote from 'markdown-it-footnote'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
-
-const base = '/vitepress-blog/'
+import wikilink from 'markdown-it-wikilinks'
+const base = '/'
 
 export default defineConfig({
   base: base,
@@ -21,8 +21,20 @@ export default defineConfig({
     math: true,
     config: (md) => {
       md.use(markdownItTaskCheckbox)
-      md.use(mark)
-      md.use(footnote)
+        .use(mark)
+        .use(footnote)
+        .use(wikilink, {
+          linkPattern:`/[[([\s\S]+?)\]]/`,
+          pageResolver: name =>
+          name
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/[^\w-]/g, ''),
+          hrefTemplate: path => `/${path}/`,
+          htmlAttributes: { class: 'wikilink', target: '_blank' }
+          }
+        )
       // md.renderer.rules.heading_close = (tokens, idx, options, env, slf) => {
       //     let htmlResult = slf.renderToken(tokens, idx, options);
       //     if (tokens[idx].tag === 'h1') htmlResult += `<ArticleMetadata />`;
