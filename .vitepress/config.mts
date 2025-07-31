@@ -50,12 +50,7 @@ export default defineConfig({
   lastUpdated: true,
   themeConfig: {
     search: {
-      provider: 'algolia',
-      options: {
-        indexName: 'vitepress_search',
-        apiKey: '59aa1e3ff23f50efc6ce5a19922cffc1',
-        appId: 'OZY1H2JHEL'
-      }
+      provider: 'local'
     },
     lastUpdated: {
       text: '上次更新于',
