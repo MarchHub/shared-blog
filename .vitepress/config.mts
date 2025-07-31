@@ -15,6 +15,7 @@ export default defineConfig({
   description: "Record learning journey",
   head: [
     ['link', { rel: 'icon', href: base + 'favicon.ico' }],
+    ['meta', { name : 'algolia-site-verification', content: '98C626A87738BF05'}]
   ],
   cleanUrls: true,
   markdown: {
@@ -48,6 +49,14 @@ export default defineConfig({
   },
   lastUpdated: true,
   themeConfig: {
+    search: {
+      provider: 'algolia',
+      options: {
+        indexName: 'vitepress_search',
+        apiKey: '848b720ba9b5b8eee2ca921e2cc116a3',
+        appId: 'CZGL7Z5LSB'
+      }
+    },
     lastUpdated: {
       text: '上次更新于',
       formatOptions: {
