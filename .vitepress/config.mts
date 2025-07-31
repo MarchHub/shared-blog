@@ -7,6 +7,16 @@ import mark from 'markdown-it-mark'
 import footnote from 'markdown-it-footnote'
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import wikilink from 'markdown-it-wikilinks'
+
+import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
+
+const baseUrl = 'https://blog.machillka.site'
+const RSS: RSSOptions = {
+  title: `Machillka's Notes`,
+  baseUrl,
+  copyright: 'Copyright (c) 2025-present, Machillka',
+}
+
 const base = '/'
 
 export default defineConfig({
@@ -26,7 +36,7 @@ export default defineConfig({
         .use(footnote)
         .use(wikilink, {
           linkPattern:`/[[([\s\S]+?)\]]/`,
-          pageResolver: name =>
+          pageResolver: (name: string) =>
           name
             .trim()
             .toLowerCase()
@@ -43,7 +53,7 @@ export default defineConfig({
       // }
     },
     codeTransformers: [
-      transformerTwoslash()
+      transformerTwoslash(),
     ],
     // theme: { light: 'material-theme-lighter', dark: 'material-theme-palenight' }
   },
@@ -78,7 +88,8 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      githubContributors()
+      githubContributors(),
+      RssPlugin(RSS),
     ]
   }
 })
