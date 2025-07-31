@@ -13,7 +13,6 @@ interface SidebarItem {
  * @param rountPath 文件前缀
  * @returns 返回传入的 dir 生成的 sidebar
  */
-console.log(folderNames)
 function ScanDir(dir: string, routePath = '', depth = 1): SidebarItem[] {
     const entries = fs
     .readdirSync(dir)
@@ -25,11 +24,7 @@ function ScanDir(dir: string, routePath = '', depth = 1): SidebarItem[] {
         const fullPath = path.join(dir, name)
         const stat = fs.statSync(fullPath)
         if (folderNames.includes(name))
-        {
-            console.log(name)
             continue
-        }
-
         // directory -> gen title item
         if (stat.isDirectory())
         {

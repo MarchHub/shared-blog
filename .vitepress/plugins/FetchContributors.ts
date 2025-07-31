@@ -14,7 +14,6 @@ export default function githubContributors(): Plugin {
   // const { owner, repo, apiBase = 'https://api.github.com' } =
   const { owner, repo } = contributors_config
   const apiBase = 'https://api.github.com'
-  console.log(process.env.GITHUB_TOKEN)
   return {
     name: 'vitepress-github-contributors',
     enforce: 'pre',

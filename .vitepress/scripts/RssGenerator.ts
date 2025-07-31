@@ -6,5 +6,3 @@ import { Feed } from 'feed'
 import { createContentLoader } from 'vitepress'
 
 var data = createContentLoader('posts/*.md')
-
-console.log(data)
