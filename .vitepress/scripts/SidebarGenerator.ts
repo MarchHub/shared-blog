@@ -79,7 +79,7 @@ function ScanDir(dir: string, routePath = '', depth = 1): SidebarItem[] {
 
 //TODO: 是否要对每一个专栏的侧边栏进行简单的重定义？
 
-export const sidebar: SidebarItem[] = ScanDir(
+export const postSidebar: SidebarItem[] = ScanDir(
     path.join(__dirname, '../../posts'),
     'posts'
 )

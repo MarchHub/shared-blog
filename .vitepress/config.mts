@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { sidebar } from './scripts/SidebarGenerator'
+import { postSidebar } from './scripts/SidebarGenerator'
 import { ScanCurrentDir } from './scripts/NavGenerator'
 import githubContributors from './plugins/FetchContributors'
 import markdownItTaskCheckbox from 'markdown-it-task-checkbox'
@@ -9,6 +9,7 @@ import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import wikilink from 'markdown-it-wikilinks'
 
 import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
+import path from 'path'
 
 const baseUrl = 'https://blog.machillka.site'
 const RSS: RSSOptions = {
@@ -55,7 +56,7 @@ export default defineConfig({
     codeTransformers: [
       transformerTwoslash(),
     ],
-    // theme: { light: 'material-theme-lighter', dark: 'material-theme-palenight' }
+    theme: { light: 'material-theme-lighter', dark: 'material-theme-palenight' }
   },
   lastUpdated: true,
   themeConfig: {
@@ -70,15 +71,27 @@ export default defineConfig({
     nav: [
       { text: '主页', link: '/' },
       { text: '内容', link: '/posts/'},
+      { text: '指南', link: '/guide/'},
       {
         text: '分类',
         items: ScanCurrentDir('../../posts/', 'posts')
       }
     ],
-    sidebar: sidebar,
+    sidebar: {
+      '/guide/': [
+        {
+          text: '指南',
+          items:[
+            { text: '站点说明', link: '/guide/' },
+            { text: '提交笔记', link: '/guide/note.md'},
+            { text: '参与开发', link: '/guide/development.md'}
+          ]
+        },
+      ],
+      '/posts/': postSidebar
+    },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/machillka' },
-      { icon: '', link: ''}
     ],
 
     footer: {
@@ -90,6 +103,6 @@ export default defineConfig({
     plugins: [
       githubContributors(),
       RssPlugin(RSS),
-    ]
+    ],
   }
 })
