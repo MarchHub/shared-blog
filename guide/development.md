@@ -38,3 +38,4 @@ pnpm run docs:preview
 - [x] 添加公式渲染
 - [ ] 添加 todo 列表
 - [ ] 添加主页贡献者[团队页面](https://vitepress.dev/zh/reference/default-theme-team-page)
+- [ ] 生成 frontmatter

@@ -9,7 +9,7 @@ import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import wikilink from 'markdown-it-wikilinks'
 
 import { RSSOptions, RssPlugin } from 'vitepress-plugin-rss'
-import path from 'path'
+
 
 const baseUrl = 'https://blog.machillka.site'
 const RSS: RSSOptions = {
@@ -102,7 +102,7 @@ export default defineConfig({
   vite: {
     plugins: [
       githubContributors(),
-      RssPlugin(RSS),
+      // RssPlugin(RSS),
     ],
   }
 })
