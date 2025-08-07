@@ -1,6 +1,9 @@
 <template>
     <Layout>
-        <template #aside-ads-before>
+        <!-- <template #aside-ads-before>
+            <TagList />
+        </template> -->
+        <template #doc-before>
             <TagList />
         </template>
         <template #doc-footer-before>

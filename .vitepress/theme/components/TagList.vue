@@ -33,18 +33,19 @@ const tags = computed(() => {
 <style scoped>
 .tag-item {
   display: inline-block;
-  padding: 0.3em 0.7em;
-  font-size: 0.9rem;
+  padding: 0.2em 0.5em;
+  font-size: 0.75rem;
   color: #fff;
-  background: linear-gradient(135deg, #2196f3, #42a5f5);
-  border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(33, 150, 243, 0.3);
+  /* background: linear-gradient(135deg, #50a9e8 20%, #94d0fa 100%); */
+  background-color: #43aefc;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(33, 150, 243, 0.3);
   transition: box-shadow 0.2s ease;
   white-space: nowrap;
 }
 
 .tag-item:hover {
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.4);
 }
 
 /* 新增：标签容器布局 */
@@ -52,7 +53,7 @@ const tags = computed(() => {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;         /* 水平 & 垂直间距 */
-  margin: 1rem 0;      /* 容器上下间距 */
+  margin: 0.5rem 0 1.5rem;      /* 容器上下间距 */
   align-items: center; /* 垂直居中对齐 */
 }
 /* .tag-list {
