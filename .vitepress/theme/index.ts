@@ -13,8 +13,10 @@ import { onMounted, watch, nextTick } from 'vue';
 import { useRoute } from 'vitepress';
 import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
 import '@shikijs/vitepress-twoslash/style.css'
-
+import TagList from './components/TagList.vue'
+import Layout from './Layout.vue'
 export default {
+  Layout,
   extends: DefaultTheme,
   setup() {
       const route = useRoute();
@@ -30,16 +32,16 @@ export default {
         () => nextTick(() => initZoom())
       );
     },
-
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      'doc-footer-before': () => h(Contributors)
-    })
-  },
+  // Layout: () => {
+  //   return h(DefaultTheme.Layout, null, {
+  //     'doc-footer-before': () => h(Contributors)
+  //   })
+  // },
   enhanceApp({ app, router, siteData }) {
-    // 注册全局组件
+
     app.component('ArticleMetadata', ArticleMetadata)
     app.component('Contributors', Contributors)
+    app.component('TagList', TagList)
     app.use(TwoslashFloatingVue)
   }
 } satisfies Theme

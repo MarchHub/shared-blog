@@ -109,19 +109,19 @@ Data already been sent
 
 ```go
 func main() {
-  ch := make(chan string, 2)                 // 创建一个缓存容量为 2 的通道
-  fmt.Println("Main: 放入 A")
-  ch <- "A"                                  // 不阻塞
-  fmt.Println("Main: 放入 B")
-  ch <- "B"                                  // 不阻塞
-  go func() {
-    time.Sleep(300 * time.Millisecond)
-    fmt.Println("Goroutine: 接收", <-ch)      // 取出 A，空出一个 slot
-  }()
-  
-  fmt.Println("Main: 放入 C（会阻塞直到有接收）")
-  ch <- "C"                                   // 阻塞，直到上面 goroutine `<-ch` 发生
-  fmt.Println("Main: C 已放入")
+    ch := make(chan string, 2)               // 创建一个缓存容量为 2 的通道
+    fmt.Println("Main: 放入 A")
+    ch <- "A"                                // 不阻塞
+    fmt.Println("Main: 放入 B")
+    ch <- "B"                                // 不阻塞
+    go func() {
+      time.Sleep(300 * time.Millisecond)
+      fmt.Println("Goroutine: 接收", <-ch)    // 取出 A，空出一个 slot
+    }()
+    
+    fmt.Println("Main: 放入 C（会阻塞直到有接收）")
+    ch <- "C"                                // 阻塞，直到上面 goroutine `<-ch` 发生
+    fmt.Println("Main: C 已放入")
 }
 ```
 

@@ -17,14 +17,13 @@
     #ABDCFF 10%,
     #0396FF 100%
   );
-  --vp-home-hero-image-filter: blur(150px);
+  --vp-home-hero-image-filter: blur(100px);
 
   /*---- 主题色 */
   --vp-c-indigo-1: #43aefc;
   --vp-c-indigo-2: #43aefc;
   --vp-c-indigo-3: #43aefc;
 }
-
 /* .VPFeatures .items .item {
   transition: transform 0.3s;
 } */
