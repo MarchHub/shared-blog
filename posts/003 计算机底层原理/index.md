@@ -1,7 +1,3 @@
-# Content
+# 计算机底层原理
 
-# Overview
- 
-```ccard
-type: folder_brief_live
-```
+无所谓，我会开始堆史善
