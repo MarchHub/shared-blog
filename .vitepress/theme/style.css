@@ -1,5 +1,10 @@
 @import './styles/custom-block.css';
 @import './styles/blur.css';
+@import './fonts/maplemono/index.css';
+
+:root {
+  --vp-font-family-mono: 'Maple Mono', monospace;
+}
 
 :root {
   --vp-c-default-1: var(--vp-c-gray-1);
