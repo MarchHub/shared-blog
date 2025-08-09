@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Machillka's Blog
-  text: 学习记录
+  text: 学习记录 共享笔记库
   tagline: 与你的相遇就是奇迹
   image:
     src: /kanban.png

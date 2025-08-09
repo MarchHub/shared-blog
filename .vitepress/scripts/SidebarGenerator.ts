@@ -9,11 +9,11 @@ interface SidebarItem {
 }
 
 /**
- * 
+ *
  * @param childItems 子项
  * @returns True: 子项全都是文件夹, False: 子项中有 md 文件
  */
-function CheckChildrenFolder(childItems: SidebarItem[]): bool {
+function CheckChildrenFolder(childItems: SidebarItem[]): boolean {
     for (const item of childItems) {
         if (item.items != null)
         {

@@ -7,8 +7,8 @@
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: linear-gradient(
     135deg,
-    #50a9e8 20%,
-    #94d0fa 100%
+    #79bbeb 20%,
+    #419dde 100%
   );
 
   /*---- 图标背景颜色渐变 */
@@ -17,12 +17,13 @@
     #ABDCFF 20%,
     #0396FF 100%
   );
-  --vp-home-hero-image-filter: blur(80px);
+  --vp-home-hero-image-filter: blur(75px);
 
   /*---- 主题色 */
   --vp-c-indigo-1: #43aefc;
   --vp-c-indigo-2: #43aefc;
   --vp-c-indigo-3: #43aefc;
+
 }
 
 /* VPFeatures .items .item{
