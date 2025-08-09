@@ -9,6 +9,22 @@ interface SidebarItem {
 }
 
 /**
+ * 
+ * @param childItems 子项
+ * @returns True: 子项全都是文件夹, False: 子项中有 md 文件
+ */
+function CheckChildrenFolder(childItems: SidebarItem[]): bool {
+    for (const item of childItems) {
+        if (item.items != null)
+        {
+            console.log(item.link);
+            return false
+        }
+    }
+    return true
+}
+
+/**
  * @param dir 需要扫描的当前目录
  * @param rountPath 文件前缀
  * @returns 返回传入的 dir 生成的 sidebar
@@ -41,7 +57,7 @@ function ScanDir(dir: string, routePath = '', depth = 1): SidebarItem[] {
                 if (fs.existsSync(path.join(fullPath, 'index.md'))) {
                     items.push({
                         text: name,
-                        collapsed: depth >= 2,
+                        collapsed: CheckChildrenFolder(childItems) || depth >= 2,
                         // 默认所有都有导航页面, 写在 path/index.md 中
                         //TODO: 可考虑自动生成 index.md
                         link: routePath + '/' + name + '.md',
@@ -50,7 +66,7 @@ function ScanDir(dir: string, routePath = '', depth = 1): SidebarItem[] {
                 } else {
                     items.push({
                         text: name,
-                        collapsed: depth >= 2,
+                        collapsed: CheckChildrenFolder(childItems) || depth >= 2,
                         items: childItems
                     })
                 }
