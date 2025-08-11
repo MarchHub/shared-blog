@@ -1,9 +1,9 @@
 ---
-title: Golang结构体
-tags: []
+title: Golang 结构体
+tags: 
 date: 2025-08-10
 ---
-# Golang结构体
+# Golang 结构体
 
 Golang 推荐组合而不是继承。
 
