@@ -3,7 +3,7 @@ title: select语句
 tags: []
 date: 2025-08-11
 ---
-# select语句
+# select 语句
 
 `select`用于监听多个`channel`
 
