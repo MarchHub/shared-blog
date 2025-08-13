@@ -17,7 +17,6 @@ function CheckChildrenFolder(childItems: SidebarItem[]): boolean {
     for (const item of childItems) {
         if (item.items != null)
         {
-            console.log(item.link);
             return false
         }
     }

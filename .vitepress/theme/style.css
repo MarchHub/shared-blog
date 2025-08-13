@@ -1,9 +1,11 @@
 @import './styles/custom-block.css';
 @import './styles/blur.css';
 @import './fonts/maplemono/index.css';
+@import './fonts/HarmonyOSSans/index.css';
 
 :root {
   --vp-font-family-mono: 'Maple Mono', monospace;
+  --vp-font-family-base: 'HarmonyOS Sans', sans-serif;
 }
 
 :root {
