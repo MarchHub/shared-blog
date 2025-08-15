@@ -22,6 +22,9 @@ const base = '/'
 
 export default defineConfig({
   base: base,
+  sitemap: {
+    hostname: baseUrl + '/'
+  },
   title: "Machillka's Blog",
   description: "Record learning journey",
   head: [
