@@ -39,3 +39,4 @@ pnpm run docs:preview
 - [ ] 添加 todo 列表
 - [ ] 添加主页贡献者[团队页面](https://vitepress.dev/zh/reference/default-theme-team-page)
 - [ ] 生成 frontmatter
+- [ ] 自定义`PageNav`
