@@ -1,6 +1,20 @@
 # 添加笔记
 
-使用Markdown写好文件直接丢到`posts`下对应的文件夹就好，如果想要开新坑，就新建文件夹，侧边栏和导航会自动生成
+使用Markdown写好文件直接丢到`posts`下对应的文件夹就好。如果想要开新坑，就新建文件夹，侧边栏和导航会自动生成
+
+提供一个笔记的template
+```txt
+---
+tags:
+  - temp
+date: 2001-03-17
+title: Your title
+---
+
+# Your title
+
+Contents
+```
 
 ## 笔记规范
 
