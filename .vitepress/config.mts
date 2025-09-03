@@ -25,11 +25,11 @@ export default defineConfig({
   sitemap: {
     hostname: baseUrl + '/'
   },
-  title: "Machillka's Blog",
+  title: "部落阁",
   description: "Record learning journey",
   head: [
     ['link', { rel: 'icon', href: base + 'favicon.ico' }],
-    ['meta', { name : 'algolia-site-verification', content: '98C626A87738BF05'}]
+    // ['meta', { name : 'algolia-site-verification', content: '98C626A87738BF05'}]
   ],
   cleanUrls: true,
   markdown: {
@@ -46,7 +46,7 @@ export default defineConfig({
             .toLowerCase()
             .replace(/\s+/g, '-')
             .replace(/[^\w-]/g, ''),
-          hrefTemplate: path => `/${path}/`,
+          hrefTemplate: (path: any) => `/${path}/`,
           htmlAttributes: { class: 'wikilink', target: '_blank' }
           }
         )

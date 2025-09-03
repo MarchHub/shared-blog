@@ -14,7 +14,7 @@ hero:
       link: /posts/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/Machillka/vitepress-blog
+      link: https://github.com/MarchHub/shared-blog
 features:
   - title: 编程语言
     details:
