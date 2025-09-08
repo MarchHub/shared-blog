@@ -39,12 +39,9 @@ func main() {
 
 `Error`有两种定义方式
 - `errors.New("一个字符串描述问题")`
-- `fmt.Rrrorf("可以格式化的字符串 %d %s", d, s)`
+- `fmt.Errorf("可以格式化的字符串 %d %s", d, s)`
 
 对于一些常见的错误，可以体现定义好，之后做比较或者`switch`分类处理也可
-```go
-
-```
 
 ## Panic 和 Recover
 
