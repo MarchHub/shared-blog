@@ -18,4 +18,3 @@ func BenchmarkAdd(b *testing.B) {
 ```
 
 `b.N` 是框架自动决定的循环次数，非常高级
-
