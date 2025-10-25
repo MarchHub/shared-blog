@@ -35,8 +35,8 @@
 提供一个示例目录
 
 ```
-Assets/                       // 根目录
-├─ Framework/                 // 核心框架
+Framework/                    // 根目录
+├─ Scripts/                   // 核心框架
 │  ├─ Core/                   // 仅包含核心逻辑
 │  │  ├─ Interface            // 抽象接口 (包含方法和事件接口)
 │  │  └─ Implementations      // 接口的具体实现
