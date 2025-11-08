@@ -1,4 +1,4 @@
-# Core-服务管理和广播系统
+# 服务管理和广播系统
 
 ## Service Locator
 
@@ -19,3 +19,8 @@
 - 取消订阅
 - Publish
 三个基础功能，其中使用channel来对应事件分发
+
+
+## Usage
+
+在`Bootstrap`中实例化`Service Locator`；之后跨场景调用的时候，可以查找到`Bootstap`中的`Service Locator` （反复调用可以进行一个缓存）然后使用
