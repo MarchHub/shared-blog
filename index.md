@@ -52,6 +52,6 @@ features:
   - title: 杂谈
     details:
       - 就是随便乱谈
-    link: /posts/008 杂谈
+    link: /posts/009 杂谈
 footer: © 2025 Machillka
 ---
