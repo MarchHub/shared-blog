@@ -29,5 +29,45 @@ Bounding Voluming：使用包围盒来抽象复杂形状——如果一个光线
 
 轴对齐包围盒——AABB “横平竖直”
 
+对空间划分 ——
+Oct-Tree
+KD-Tree
+BSP-Tree
 
-（// ？？ 能否直接对空间进行划分，然后进行查找物体
+对物体进行划分 ——
+BVH
+
+## 辐射度量学
+
+准确定义光照的办法
+
+光的属性：
+`Radiant Flux` `Intensity` `Irradiance` `Radiance`
+
+- Radiant Flux (Power)：光源单位时间辐射出的能量 $\Phi\equiv\frac{dQ}{dt}$ 是功率，单位 $Watt$ 光学上使用 $lm=lumen$
+### Radiant  Intensity
+
+`Radiant Intensity` 简称 `Intensity`，光从光源发出方向性的能量
+
+Power per unit solid angle （每个单位立体角上的Power
+
+$$I(\omega) = \frac{d\Phi}{d\omega}$$
+$\Phi$ 可以使用流明或者瓦特作为单位
+
+立体角：单位面积/半径平方 -> $\Omega=\frac{A}{r^2}$ 所以球为 $4\pi$ 立体角
+
+### Irradiance
+
+物体表面接收多少光 Power Per Unit Area
+
+$$
+E(x) = \frac{d\Phi}{dA}
+$$
+$\left[ \frac{W}{m^2} \right], \left[ \frac{lm}{m^2} =lux \right]$
+
+Power/面积
+
+### Radiance
+
+度量光传播中的能量
+
