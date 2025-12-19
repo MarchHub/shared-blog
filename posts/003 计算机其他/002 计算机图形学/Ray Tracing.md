@@ -58,7 +58,7 @@ $\Phi$ 可以使用流明或者瓦特作为单位
 
 ### Irradiance
 
-物体表面接收多少光 Power Per Unit Area
+物体表面接收多少光 Power Per Unit Area （总能量
 
 $$
 E(x) = \frac{d\Phi}{dA}
@@ -71,3 +71,36 @@ Power/面积
 
 度量光传播中的能量
 
+某个方向进来，A接收到的能量。所以把所有方向积起来就是`Irradiance`
+
+## BRDF
+
+描述一个微小面积，如何收集一个方向的能量（Radiance）-> Irradiance ，再反射到其他地方去（Radiance）
+
+收集一个方向的能量，按照一定的==比例==再发射出去
+
+$$f_{w}(\omega_{i} \to \omega_{r})=\frac{dL_{r}(\omega)}{dE_{i}(\omega_{i})}=\frac{dL_{r}(\omega _{r})}{L_{i}(\omega_{i})\cos \theta_{i}d\omega_{i}}$$
+比如漫反射，就是均等的向各个角度分配能量。
+
+把每一个可能的入射方向对一个出射方向（视角）分配的能量积起来，就是我们看到这个点的光线效果
+反射方程：
+$$
+L_{r}(p, \omega_{r}) = \int_{H^2} f_{r}(p, w_{i}\to \omega_{r})L_{i}(p, \omega_{i})\cos \theta_{i}d\omega_{i}
+$$
+
+==渲染方程==：把自己发的光再加上反射方程（自己的光+别人来的光
+引用Games101闫神的课件
+![[Pasted image 20251212194202.png]]
+
+这就变成一个递归程序
+
+写成 ——
+$$
+L = E + KL
+$$
+可以得到
+$$
+L = (I-K)^{-1}E
+$$
+然后展开，分解成——
+看到光源，光源经过一次反射到达surface，经过两次，经过三次……
