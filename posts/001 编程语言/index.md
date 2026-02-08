@@ -1,8 +1,6 @@
 ---
-prev:
-  false
-next:
-  false
+prev: false
+next: false
 ---
 # 编程语言
 
