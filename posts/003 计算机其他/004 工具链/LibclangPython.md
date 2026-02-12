@@ -188,3 +188,5 @@ def find_reflection(node, namespace="", res=None):
 		find_reflection(child, namespace, res)
 return res
 ```
+
+补充一下文档[LibClang](https://clang.llvm.org/docs/IntroductionToTheClangAST.html)
