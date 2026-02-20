@@ -26,10 +26,10 @@ features:
       - 编程的一些范式
       - 软件设计
     link: /posts/002 软件工程
-  - title: 计算机底层原理
+  - title: 计算机其他
     details:
       - 计算机组成、原理性东西
-    link: /posts/003 计算机底层原理
+    link: /posts/003 计算机其他
   - title: 数据结构与算法
     details:
       - 数据结构与算法
@@ -49,9 +49,13 @@ features:
     details:
       - 美工、设计等方向
     link: /posts/007 美工
+  - title: 数学相关
+    details:
+      - 一些简单的数学 能用上的数学
+    link: /posts/009 数学相关
   - title: 杂谈
     details:
       - 就是随便乱谈
-    link: /posts/009 杂谈
+    link: /posts/010 杂谈
 footer: © 2025 Machillka
 ---
