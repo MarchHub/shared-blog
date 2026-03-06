@@ -86,9 +86,7 @@ class Scene
 这样,把读写操作下沉到`IArchive`中,而业务层只需要关心数据即可,显得更整洁.
 
 当然,上述只是描述一个数据流的过程,如果在生产实践中,我们还需要引入一个磁盘读写层给上层调用来实现持久化.
-
 ## cereal 分析
-
 
 最后贴下 [Unreal Archive](https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Core/Public/Serialization/Archive.h) 以供学习
 
