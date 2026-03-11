@@ -26,6 +26,16 @@ tags:
 - 伪共享（False Sharing）
 - 跨行访问（Unaligned Access）
 
+### False Sharing
+
+提供一个简单的 Benchmark 结果来直观感受一下 ——
+```
+BM_FalseSharing        0.083 ms        0.011 ms        59865
+BM_PaddingSharing      0.036 ms        0.011 ms        63646
+```
+两个线程分别访问同一个结构体的两个变量 —— 但是没有对齐的时候,数据会疯狂的像打乒乓球一样在两个线程之间来回跳转;
+优化方式 —— 把结构体内的两个变量按照 Cache Line 的字节数对齐
+
 ## MESI
 
 如果不同的缓存都在访问内存中的同一个变量时，如何保证数据一致？这边引入了一个`MESI`协议——
@@ -75,11 +85,6 @@ tags:
 
 然后在宏观上可以看作是先做了`r1 = y; r2 = x` 这两条指令，再执行的`x = 1; y = 1`的赋值，所以是指令重排序
 
-
-
-
 ### Invalidate Queue
 
-为了提升 Invalidate 回复慢的问题，于是引入这个缓冲队列 —— 当接收到 Invalidate 信号的时候，先把请求入队，然后直接回复 Invalidate 完成的消息，之后再异步的把 Cache Line 标记为 I
-
-当然，上面两个 hack 的想法不错，不过会带来一些问题 —— 比如读写乱序（数据存在多个副本）等
+为了提升 Invalidate 回复慢的问题，于是引入这个缓冲队列 —— 当接收到 Invalidate 信号的时候，先把请求入队，然后直接回复 Invalidate 完成的消息，之后再异步的把 Cache Line 标记为 Invalidate
