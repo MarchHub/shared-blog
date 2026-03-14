@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "devDependencies": {
     "@octokit/rest": "^22.0.0",
     "@shikijs/vitepress-twoslash": "^3.8.1",
@@ -26,8 +27,9 @@
     "vitepress-plugin-rss": "^0.3.1"
   },
   "scripts": {
+    "gen-index": "node .vitepress/scripts/GenIndex.js",
     "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
+    "docs:build": "npm run gen-index && vitepress build",
     "docs:preview": "vitepress preview"
   },
   "dependencies": {

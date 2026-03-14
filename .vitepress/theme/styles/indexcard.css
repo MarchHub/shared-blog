@@ -1,0 +1,97 @@
+/* .folder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.folder-card {
+    display: block;
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--vp-c-bg-soft);
+    border: 1px solid var(--vp-c-divider);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.folder-card:hover {
+    background: var(--vp-c-bg);
+    transform: translateY(-3px);
+}
+
+.folder-card .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.folder-card .desc {
+    font-size: 14px;
+    opacity: 0.7;
+} */
+.folder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+/* 基础卡片样式 */
+.folder-card {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid var(--vp-c-divider);
+    background: var(--vp-c-bg-soft);
+    color: var(--vp-c-text-1);
+    transition: all 0.2s ease;
+}
+
+/* 文件夹卡片（柔和渐变 + 更轻的高亮） */
+.folder-type {
+    background: linear-gradient(
+        135deg,
+        rgba(100, 150, 255, 0.15),
+        var(--vp-c-bg-soft)
+    );
+    border-left: 4px solid rgba(100, 150, 255, 0.6);
+}
+
+.folder-type:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(
+        135deg,
+        rgba(100, 150, 255, 0.25),
+        var(--vp-c-bg-soft)
+    );
+}
+
+.file-type {
+    background: var(--vp-c-bg);
+    border-left: 4px solid var(--vp-c-divider);
+}
+
+.file-type:hover {
+    transform: translateY(-3px);
+    background: var(--vp-c-bg-soft);
+}
+
+.folder-card .icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+    opacity: 0.85;
+}
+
+.folder-card .title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.folder-card .desc {
+    font-size: 13px;
+    opacity: 0.7;
+}

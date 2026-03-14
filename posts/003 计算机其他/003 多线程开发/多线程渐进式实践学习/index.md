@@ -1,5 +1,20 @@
+---
+prev: false
+next: false
+---
+
 # 多线程渐进式实践学习
 
-自己都不知道为什么会起一个这样神奇的名字，不过大体是对的——从临界资源、原子操作、信息量、各种锁等详细的说明清楚；以及其他的如线程池的算法等。
+<div class="folder-grid">
 
-特点：加上`C++`的实际例子，使用`google benchmark`进行基准测试
+<a class="folder-card file-type" href="./Google%20Benchmark">
+  <div class="icon">📄</div>
+  <div class="title">Google Benchmark</div>
+</a>
+
+<a class="folder-card file-type" href="./%E5%A4%9A%E7%BA%A7%E7%BC%93%E5%AD%98%E5%92%8CMESI">
+  <div class="icon">📄</div>
+  <div class="title">多级缓存和MESI</div>
+</a>
+
+</div>

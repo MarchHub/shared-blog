@@ -34,7 +34,15 @@ typedef struct VkGraphicsPipelineCreateInfo {
 `ViewPort` 缩放
 `Rasterization` 光栅化前的一些操作
 `ColorBlend` 描述色彩混合
-`VertexInputState` 指定顶点数据，以及如何输入（是`{1, 2, 3, 4, 5, 6}` 还是 `{{1, 2, 3}, {4, 5, 6}}` 类似这样
+`VertexInputState` 指定顶点数据，以及如何输入（是
+```
+{1, 2, 3, 4, 5, 6}
+```
+还是
+```
+{{1, 2, 3}, {4, 5, 6}}
+```
+类似这样
 `InputAssemblyState` 顶点数据如何组织（比如独立的点，三角形，三个点怎么组成一个三角形……
 
 
