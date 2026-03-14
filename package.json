@@ -29,7 +29,7 @@
   "scripts": {
     "gen-index": "node .vitepress/scripts/GenIndex.js",
     "docs:dev": "vitepress dev",
-    "docs:build": "npm run gen-index && vitepress build",
+    "docs:build": "vitepress build",
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
